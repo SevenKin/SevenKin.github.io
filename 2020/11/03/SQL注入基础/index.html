@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Seve         |       博观而约取 - 厚积而薄发</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Seve         |       博观而约取 - 厚积而薄发">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Web应用架构分析 WebApp：WebApp是指基于Web的系统和应用，其作用是向广大的最终用户发布一组复杂的内容和功能。网页、WEB站点等都是WebApp 容器：web容器是一种服务程序，在服务器一个端口就有一个提供相应服务的程序，而这个程序就是处理从客户端发出的请求，如JAVA中的Tomcat容器，ASP的IIS或PWS都是这样的容器。一个服务器可以有多个容器。   一旦有语句带入到数据库查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seve         |       博观而约取 - 厚积而薄发">
+<meta property="og:url" content="http://sevenkin.github.io/2020/11/03/SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Seve         |       博观而约取 - 厚积而薄发">
+<meta property="og:description" content="Web应用架构分析 WebApp：WebApp是指基于Web的系统和应用，其作用是向广大的最终用户发布一组复杂的内容和功能。网页、WEB站点等都是WebApp 容器：web容器是一种服务程序，在服务器一个端口就有一个提供相应服务的程序，而这个程序就是处理从客户端发出的请求，如JAVA中的Tomcat容器，ASP的IIS或PWS都是这样的容器。一个服务器可以有多个容器。   一旦有语句带入到数据库查">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201024230945354.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201024231153666.png">
+<meta property="og:image" content="c:/Users/11493/AppData/Roaming/Typora/typora-user-images/image-20201024232707278.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201024235330993.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201025002238508.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201025002334342.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201025002415971.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201025235445943.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201025235659720.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201026000008240.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201101224815016.png">
+<meta property="og:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201101231442443.png">
+<meta property="article:published_time" content="2020-11-03T15:09:58.438Z">
+<meta property="article:modified_time" content="2020-11-03T15:09:20.513Z">
+<meta property="article:author" content="Seve">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/网易云Web安全工程师进阶版/笔记/images/image-20201024230945354.png">
+
+
+<link rel="icon" href="/img/me_avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/me_avatar.jpg" />
+</a>
+<div class="author">
+    <span>Seve</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/SevenKin" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/mi-mang-de-gao-yang-9/posts" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:1149343359@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1149343359&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(2)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="2">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="/null">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 "
+           href="/2020/11/03/SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2020-11-03 23:09:58">2020/11/03</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/2020/09/18/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-09-18 11:24:48">2020/09/18</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-SQL注入基础" class="article article-type-post" itemscope itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2020-11-03 23:09:20'>2020-11-03 23:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-text">Web应用架构分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-text">SQL注入原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSQL%E6%B3%A8%E5%85%A5"><span class="toc-text">什么是SQL注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%BA%A7%E7%94%9FSQL%E6%B3%A8%E5%85%A5%EF%BC%9A"><span class="toc-text">为什么会产生SQL注入：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%EF%BC%9A"><span class="toc-text">SQL注入漏洞：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E6%B3%A8%E5%85%A5%E6%96%B9%E6%B3%95%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">MySQL注入方法逻辑运算及常用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%B5%81%E7%A8%8B"><span class="toc-text">SQL注入流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E6%89%BESQL%E6%B3%A8%E5%85%A5%E7%82%B9"><span class="toc-text">寻找SQL注入点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%B5%81%E7%A8%8B-1"><span class="toc-text">SQL注入流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%89%8B%E5%B7%A5%E6%B3%A8%E5%85%A5%E6%96%B9%E6%B3%95"><span class="toc-text">SQL手工注入方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%93%E6%9E%84"><span class="toc-text">1、MySQL数据库结构</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Web应用架构分析"><a href="#Web应用架构分析" class="headerlink" title="Web应用架构分析"></a>Web应用架构分析</h2><p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201024230945354.png" alt="image-20201024230945354"></p>
+<p>WebApp：WebApp是指基于Web的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F/479832">系统</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8/3994271">应用</a>，其作用是向广大的最终用户发布一组复杂的内容和功能。网页、WEB站点等都是WebApp</p>
+<p>容器：<em>web容器是</em>一种服务程序，在服务器一个端口就有一个提供相应服务的程序，而这个程序就是处理从客户端发出的请求，如JAVA中的Tomcat容器，ASP的IIS或PWS都是这样<em>的容器</em>。一个服务器可以有多个容器。</p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201024231153666.png" alt="image-20201024231153666"></p>
+<p><img src="C:\Users\11493\AppData\Roaming\Typora\typora-user-images\image-20201024232707278.png" alt="image-20201024232707278"></p>
+<p>一旦有语句带入到数据库查询当中就可以产生sql注入</p>
+<h2 id="SQL注入原理"><a href="#SQL注入原理" class="headerlink" title="SQL注入原理"></a>SQL注入原理</h2><p>结构化查询语言SQL是一种介于关系代数与关系演算之间的语言，其功能包括查询、操纵、定义和控制四个方面，是一个通用的功能极强的关系数据库标准语言。在SQL语言中不需要告诉SQL如何访问数据库，只要告诉SQL需要数据库做什么。</p>
+<h3 id="什么是SQL注入"><a href="#什么是SQL注入" class="headerlink" title="什么是SQL注入"></a>什么是SQL注入</h3><p>SQL注入是在正常的SQL语句中恶意添加SQL语句，对数据库系统的内容进行直接检索或修改。</p>
+<h3 id="为什么会产生SQL注入："><a href="#为什么会产生SQL注入：" class="headerlink" title="为什么会产生SQL注入："></a>为什么会产生SQL注入：</h3><p>没有对用户输入的数据或者是页面中所携带的信息进行必要的合法性判断。</p>
+<h3 id="SQL注入漏洞："><a href="#SQL注入漏洞：" class="headerlink" title="SQL注入漏洞："></a>SQL注入漏洞：</h3><p>灵活的SQL查询语句+用户输入的数据带入了SQL语句=用户直接操作数据库 ===》SQL注入漏洞</p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201024235330993.png" alt="image-20201024235330993"></p>
+<p>当我们访问一个网站的主页，逻辑层就会加载、编译并执行—，应用层利用程序和业务逻辑与数据存储交互，比如SQL语句；存储层则会执行传入的SQL语句并返回执行的结果，应用层对传回的结果进行一些处理就传回逻辑层，逻辑层就把这些数据带入到HTML页面当中在传回表示层，表示层就会把这些HTML表现出来</p>
+<h2 id="MySQL注入方法逻辑运算及常用函数"><a href="#MySQL注入方法逻辑运算及常用函数" class="headerlink" title="MySQL注入方法逻辑运算及常用函数"></a>MySQL注入方法逻辑运算及常用函数</h2><p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201025002238508.png" alt="image-20201025002238508"></p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201025002334342.png" alt="image-20201025002334342"></p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201025002415971.png" alt="image-20201025002415971"></p>
+<blockquote>
+<p>万能密码：’or ‘1’ = ‘1</p>
+<p>‘ and 1=2 union select 1,2,3–+</p>
+<p>可以更直观的看到前端回显哪些数据库的结果     —union 注入</p>
+<p>select user() regexp ‘^ro’ </p>
+<p>匹配user表中or开头的用户</p>
+<p>ascii(substr((select user(),1,1))=114) </p>
+<p>把系统用户的第一个字母转换成ascii</p>
+<p>if(ascii(substr((select user(),1,1))=114),0,sleep(5)) </p>
+<p>如果？=114，则返回0，否则睡眠5秒   —时间延迟注入</p>
+<p>updatexml(1,concat(0x7e,(select @@version),0x7e),1)</p>
+<p>对xml格式的字符进行匹配和替换</p>
+</blockquote>
+<h2 id="SQL注入流程"><a href="#SQL注入流程" class="headerlink" title="SQL注入流程"></a>SQL注入流程</h2><ol>
+<li><h3 id="寻找SQL注入点"><a href="#寻找SQL注入点" class="headerlink" title="寻找SQL注入点"></a>寻找SQL注入点</h3><ul>
+<li><p>注入点的判断：判断一个连接是否存在注入漏洞，可以通过对其传入的参数（但不仅仅只限于参数，还有cookie注入，HTTP头注入等）进行构造，然后对服务器返回的内容进行判断来查看是否存在注入点。</p>
+</li>
+<li><p>注入点的种类：</p>
+<p>按注入点参数的类型分类：</p>
+<p>​    （1）数字型注入：例如id=1，向数据库传入的是数字，参数不需要被引号括起来。</p>
+<p>​    （2）字符型注入：例如name=admin，向数据库传入的是字符串，参数需要被引号括起来。</p>
+<p>按数据请求方式分类：</p>
+<p>​    （1）GET注入：HTTP请求方式为get，注入点一般在get传入的参数部分，例如?id=1，id便是一个注入点。</p>
+<p>​    （2）POST注入：HTTP请求方式为post，注入点一般为提交的HTML表单，即post传入的数据内容。</p>
+<p>​    （3）HTTP头注入：HTTP的请求头存在注入点，例如XFF头，cookie，Host这些都是常见的注入点。</p>
+<p>按语句的执行效果分类：</p>
+<p>​    （1）报错注入：页面会返回错误信息，或者将语句的查询结果直接返回到页面。</p>
+<p>​    （2）基于布尔的盲注：盲注的意识就是你无法直接通过页面的返回内容来获取信息，页面只会返回真假，你需要对一个个字符进行测试，相对于报错注入，盲注的工作量比较庞大，一般写脚本或者工具跑。</p>
+<p>​    （3）基于时间的盲注：页面无法直接返回真假，需要构造条件语句查看时间延迟的语句是否成功执行（观察页面的返回时间的长短）来进行判断。</p>
+<p>​    （4）联合查询注入：通过union来将多条语句的结果组合到一个结果中。</p>
+<p>​    （5）宽字节注入：宽字节注入是由编码不统一引起的，一般是在PHP+MySQL中出现。</p>
+<p>​    （6）堆查询注入：堆叠查询可以构造执行多条语句。</p>
+<p>​    （7）二次注入：将攻击者构造的恶意数据存储在数据库后，恶意数据被读取并进入到SQL查询语句所导致的注入。</p>
+<ul>
+<li><p>注入类型的判断</p>
+<p>（1）数字型注入</p>
+<p>​        判断步骤：</p>
+<p>​            首先在参数后加个单引号，URL：sqli.net/Less-1/?id=1’ 对应的sql：select * from table where id=3’ 这时sql语句出错，程序无法正常从数据库中查询出数据，就会抛出异常；</p>
+<p>​            在参数后加 and 1=1，URL：sqli.net/Less-1/?id=1’ and 1=1 对应的sql：select * from table where id=3’ and 1=1 该语句前后都为真，语句执行正常，与原始页面无任何差异；</p>
+<p>​            在参数后加 and 1=2，URL：sqli.net/Less-1/?id=1’ and 1=2 对应的sql：select * from table where id=3’ and 1=2 该语句为假，所以无法返回结果，返回异常。</p>
+<p>​            一般满足以上三点就可以认定该注入点的类型为数字型注入。</p>
+<p>（2）字符型注入</p>
+<p>​        判断步骤：</p>
+<p>​                加单引号：select * from table where name=’admin’’ 由于加单引号后变成三个单引号，则无法执行，程序会报错；</p>
+<p>​                加 and 1=1 此时sql 语句为：select * from table where name=’admin’ and 1=1’ ,也无法进行注入，还需要通过注释符号将其绕过；（MySQL常用的注释符号有#  – （后面还有个空格） /* */）</p>
+<p>构造语句为：select * from table where name =’admin’ and 1=1#’ 可成功执行返回结果正确；</p>
+<p>​                加and 1=2 此时sql语句为：select * from table where name=’admin’ and 1=2 –’则会报错。</p>
+<p>​                如果满足以上三点的话，基本可以认定为字符型注入。</p>
+<p>以上寻找SQL注入点的出处：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/ninedream/">http://www.cnblogs.com/ninedream/</a></p>
+</li>
+</ul>
+</li>
+<li><p>目标收集</p>
+<p>无特定目标：inurl:.php?id=</p>
+<p>有特定目标：inurl:.php?id=site:target.com</p>
+<p>工具爬取：spider，对搜索引擎和目标网站的连接进行爬取</p>
+</li>
+<li><p>注入漏洞识别方法</p>
+<p>手工简单识别：</p>
+<p>​    ‘</p>
+<p>​    and 1=1（返回正常） / and 1=2（返回不正常）说明存在sql注入点</p>
+<p>​    and ‘1’=’1 / and ‘1’=’2</p>
+<p>​    and 1 like 1 / and 1 like 2</p>
+<p>工具识别：</p>
+<p>​    sqlmap -m filename(filename中保存检测目标)</p>
+<p>​    sqlmap –crawl(sqlmap对目标网站进行爬取，然后依次进行测试)</p>
+<p>高级识别：</p>
+<p>​    扩展识别广度和深度：</p>
+<p>​        sqlmap –level 增加测试级别，对header中相关参数也进行测试</p>
+<p>​        sqlmap -r filename（filename中为网站请求数据）</p>
+<p>​    利用工具提高识别效率：</p>
+<p>​        BurpSuite + SqlMap</p>
+<p>​        BurpSuite拦截所有浏览器访问提交的数据</p>
+<p>​        BurpSuite扩展插件，直接调用SqlMap进行测试</p>
+<p>一些Tips：</p>
+<p>​    可以在参数后键入 “*”来确定想要测试的参数</p>
+<p>​    可能出现注入的点：新闻、登录、搜索、留言。。。</p>
+<p>​    站在开发的角度去寻找</p>
+<p>​    Cookie在后台带入了sql语句，对数据库进行了一系列操作的话也可能会存在SQL注入漏洞</p>
+</li>
+</ul>
+<p>​    代码审计：</p>
+<p>​            搜索关键代码和函数</p>
+<p>​                通过SQL语句倒着找语句传递的参数是否有问题</p>
+<p>​                通过直接获取用户输入的一些内容正着找，最后带入SQL语句，并判断这个过程中是否对数据进行处理。</p>
+<p>​            梳理业务流程</p>
+</li>
+<li><h3 id="SQL注入流程-1"><a href="#SQL注入流程-1" class="headerlink" title="SQL注入流程"></a>SQL注入流程</h3></li>
+</ol>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201025235445943.png" alt="image-20201025235445943"></p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201025235659720.png" alt="image-20201025235659720"></p>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201026000008240.png" alt="image-20201026000008240"></p>
+<h2 id="SQL手工注入方法"><a href="#SQL手工注入方法" class="headerlink" title="SQL手工注入方法"></a>SQL手工注入方法</h2><h3 id="1、MySQL数据库结构"><a href="#1、MySQL数据库结构" class="headerlink" title="1、MySQL数据库结构"></a>1、MySQL数据库结构</h3><p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201101224815016.png" alt="image-20201101224815016"></p>
+<blockquote>
+<p>连接层：</p>
+<p>​    通信协议：实现数据库对外部应用进行通信。</p>
+<p>​    线程：运用多线程实现多个任务同时进行</p>
+<p>​    验证：验证用户输入的用户名和密码</p>
+<p>SQL层：通过特定的SQL语句，完成了数据库的执行并把执行的结果进行处理，返回我们可以识别的信息。</p>
+<p>​    功能：</p>
+<p>​        1、判断语法、语句、语义</p>
+<p>​        2、数据库对象授权情况判断，授权失败不继续</p>
+<p>​        3、解析（解析器）：将sql语句解析成执行计划，运行执行计划，生成找数据的方式</p>
+<p>​        4、优化（优化器）：运行执行计划，基于算法，从执行计划中选择代价最小的交给“执行器”</p>
+<p>​        5、执行（执行器）：运行执行计划，最终生产如何去磁盘找数据方式</p>
+<p>​        6、将取数据的方式交给下层（存储引擎层）进行处理</p>
+<p>​        7、最终将取出的数据抽象成管理员或用户能看懂的方式，展示在用户面前</p>
+<p>​        8、查询缓存：缓存之前查询的数据</p>
+<p>存储引擎层：实现存储数据和获取数据，定义存储数据的格式和方式。</p>
+</blockquote>
+<p><img src="D:\网易云Web安全工程师进阶版\笔记\images\image-20201101231442443.png" alt="image-20201101231442443"></p>
+<blockquote>
+<p>MySQL内置的information_schema库，它功能强大是我们进行sql注入的基石。</p>
+<p>通过information_schema库我们可以窥透整个MySQL的运行情况，也可以查看到数据库中所有的数据信息。</p>
+</blockquote>
+<p>查询数据核心语法：</p>
+<p>​    【1】查库：select schema_name from information_schema.schemata</p>
+<p>​    【2】查表：select table_name from information_schema.tables where table_schema=’库名’</p>
+<p>​    【3】查列：select column_name from information_schema.columns where table_name=’表名’</p>
+<p>​    【4】查数据：select 列名 from 库名.表名</p>
+<p>​    Tip1：所有类型的sql注入都是基于查库、表、列语句</p>
+<p>​    Tip2：如果数据太多，导致无法返回查询结果—可利用limit限定返回的数量及位置，依次查询回显数据的场景；*concat*连接多个数据成为一条返回结果</p>
+<p>​    Tip3：在一些场景想要快速获取数据，需借助工具，如：BurpSuite</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1149343359@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Winks
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
